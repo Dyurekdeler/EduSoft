@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/gradient_bg">
+
+
+    <ImageView
+        android:id="@+id/profileImg"
+        android:layout_width="101dp"
+        android:layout_height="80dp"
+        android:src="@drawable/egesoft"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:layout_marginEnd="10dp"/>
+    <EditText
+        android:id="@+id/userEmail"
+        style="@style/App_EditTextStyle"
+        app:layout_constraintTop_toBottomOf="@id/profileImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:hint="@string/login_email_text"
+        android:inputType="textEmailAddress"/>
+    <EditText
+        android:id="@+id/userPwd"
+        style="@style/App_EditTextStyle"
+        app:layout_constraintTop_toBottomOf="@id/userEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:hint="@string/login_password_text"/>
+
+    <TextView
+        android:id="@+id/forgotPwdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userPwd"
+        tools:text="Forgot Password?"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:text="@string/forgot_password"
+        android:textColor="@android:color/white"/>
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgotPwdText"
+        app:layout_constraintVertical_bias="0.1"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/signUpTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginBtn"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="center"
+        tools:text="Already have an account?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/already_have_an_account"
+        android:textColor="@android:color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
