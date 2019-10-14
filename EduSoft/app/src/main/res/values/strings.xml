@@ -10,4 +10,6 @@
     <string name="name">Name</string>
     <string name="sign_up">Sign Up</string>
     <string name="show_password">Show Password</string>
+    <string name="forgot_pw_txt">Please enter your registered e-mail below.</string>
+    <string name="reset">Reset</string>
 </resources>

@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        /* logout butonuna click için ana aktiviteye dönme fonk. bağlanıyor */
         loginBtn  = findViewById(R.id.loginBtn);
         forgotPwdTxt = findViewById(R.id.forgotPwdText);
         signUpTxt = findViewById(R.id.signUpTxt);
@@ -46,12 +45,20 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        forgotPwdTxt.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPwActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void login() {
-
-        if(!TextUtils.isEmpty(userEmail.getText()) && !TextUtils.isEmpty(userPassword.getText())){
-            Intent intent = new Intent(this, MainActivity.class);
+        /* id=admin pw=admin */
+        if((!TextUtils.isEmpty(userEmail.getText()) && !TextUtils.isEmpty(userPassword.getText())) && userEmail.getText().toString().equals("admin") && userPassword.getText().toString().equals("admin") ){
+            Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
         }else{
             Toast.makeText(getApplicationContext(),"Please fill all the required fields",Toast.LENGTH_SHORT).show();
